@@ -6,10 +6,10 @@ using UnityEngine;
 public class ItemDataBase : ScriptableObject {
  
 	[SerializeField]
-	private List<Item> itemList = new List<Item>();
+	private List<ItemData> itemLists = new List<ItemData>();
  
 	//　アイテムリストを返す
-	public List<Item> GetItemList() {
-		return itemList;
+	public List<ItemData> GetItemLists() {
+		return itemLists;
 	}
 }

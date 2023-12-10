@@ -19,7 +19,7 @@ public class ItemDBManager : MonoBehaviour
 
     void Update(){
         //Debug.Log(n);
-        /*
+        
         array[n] = 1;
     }
 
@@ -33,6 +33,6 @@ public class ItemDBManager : MonoBehaviour
          else
          {
              Destroy(this.gameObject);
-         }*/
+         }
      }
 }
