@@ -5,15 +5,22 @@ using UnityEngine.UI;
 
 public class BagToSelectButton : MonoBehaviour
 {
+    // Inspector
+    [SerializeField]
+    private SelectItemManager selectItemManager;
+
+    //public SelectItemManager selectItemManager;
+
     public Button itemButton;
+    public int selectedItemId = 1;
 
     void Start()
     {
-        //itemButton.onClick.AddListener(ActivatePanel);
+        itemButton.onClick.AddListener(ChangeSelectedItem);
     }
 
-    void Update()
-    {
-        
+    public void ChangeSelectedItem(){
+        SelectItemManager selectedItem = new SelectItemManager();//インスタンス化
+        SelectItemManager.instance.selectedItem = selectedItemId;
     }
 }
