@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class item : MonoBehaviour
+public class Item : MonoBehaviour
 {
     bool isFlag = false;
     int click = 0;
     int objectNumber = 16;
-    public GameObject itemExplanationTextPanel;
+    //public GameObject itemExplanationTextPanel;
     public GameObject itemObject;
-    public Text itemExplanationText;
+    //public Text itemExplanationText;
     public String itemName;
 
     //　アイテムデータベース
@@ -33,14 +33,15 @@ public class item : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F)){
                 itemObject = this.gameObject;
                 itemName = itemObject.name;
-                itemExplanationText.text = GetItem(itemName).GetText();//sentence(this.text);
-                itemExplanationTextPanel.SetActive(true);
-                objectNumber = GetItem(itemName).GetId();
+                //itemExplanationText.text = GetItem(itemName).GetText();//sentence(this.text);
+                //itemExplanationTextPanel.SetActive(true);
+                //objectNumber = GetItem(itemName).GetId();
+
                 //Debug.Log(objectNumber);
                 ItemDBManager.instance.n = objectNumber;
                 ItemDBManager.instance.itemCountManager++;
                 
-            }
+            }/*
             if (Input.GetMouseButtonDown(0)){
                 click++;
             }
@@ -109,7 +110,7 @@ public class item : MonoBehaviour
                     itemExplanationTextPanel.SetActive(false);
                     itemObject.SetActive(false);
                 }
-            }
+            }*/
 
         }
        

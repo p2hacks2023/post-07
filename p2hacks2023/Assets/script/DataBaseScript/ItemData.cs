@@ -21,6 +21,9 @@ public class ItemData : ScriptableObject {
 	//　オブジェクトのid
 	[SerializeField]
 	private int id;
+	//　オブジェクトの拾ったか拾ってないか
+	[SerializeField]
+	private int isGet;
 	//　オブジェクトの名前
 	[SerializeField]
 	private string itemName;
@@ -59,6 +62,10 @@ public class ItemData : ScriptableObject {
 
 	public int GetId() {
 		return id;
+	}
+
+	public int GetIsGet() {
+		return isGet;
 	}
  
 	public string GetItemName() {
