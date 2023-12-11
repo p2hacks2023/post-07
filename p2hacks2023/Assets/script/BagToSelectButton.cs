@@ -7,7 +7,7 @@ public class BagToSelectButton : MonoBehaviour
 {
     // Inspector
     [SerializeField]
-    private SelectItemManager selectItemManager;
+    private Stage1SelectItemManager selectItemManager;
 
     //public SelectItemManager selectItemManager;
 
@@ -21,6 +21,6 @@ public class BagToSelectButton : MonoBehaviour
 
     public void ChangeSelectedItem(){
         //SelectItemManager selectedItem = new SelectItemManager();//インスタンス化
-        SelectItemManager.instance.selectedItem = selectedItemId;
+        Stage1SelectItemManager.instance.selectedItem = selectedItemId;
     }
 }
