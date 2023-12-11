@@ -20,7 +20,7 @@ public class BagToSelectButton : MonoBehaviour
     }
 
     public void ChangeSelectedItem(){
-        SelectItemManager selectedItem = new SelectItemManager();//インスタンス化
+        //SelectItemManager selectedItem = new SelectItemManager();//インスタンス化
         SelectItemManager.instance.selectedItem = selectedItemId;
     }
 }
