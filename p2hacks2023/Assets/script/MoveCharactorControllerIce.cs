@@ -27,7 +27,8 @@ public class MoveCharactorControllerIce : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        anim.SetBool("isWalk", movement != Vector2.zero);
+        
+        anim.SetBool("isWalk", ((movement != Vector2.zero) && (this.transform.position.x >= icezone_horizon)));
 
         if (movement != Vector2.zero)
         {
