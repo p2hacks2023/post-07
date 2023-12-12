@@ -5,18 +5,21 @@ using UnityEngine;
 public class MoveCharactorControllerIce : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float icezone_horizon;
+    [SerializeField] private float icezone_horizon; //氷と安全地帯の境目のx座標(stage2専用)
     private Rigidbody2D body;
-    //private Animator anim;
+    private Animator anim;
     private Vector2 movement;
-    private Vector2 movement2;
-    private int flag = 0;   //移動の入力を受け付けるかどうかのフラグ
+    private Vector2 movement2;//入力を保存しておく用の変数(stage2専用)
+    private Vector2 restartpoint;
+    private int flag = 0;   //移動の入力を受け付けるかどうかのフラグ(stage2専用)
+    private int Iceflag = 0;   //安全地帯に行ったかフラグ(stage2専用)
+    
 
     // Start is called before the first frame update
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,60 +27,69 @@ public class MoveCharactorControllerIce : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        //anim.SetBool("isWalk", movement != Vector2.zero);
-        //if (movement != Vector2.zero)
-        //{
-            //anim.SetFloat("X", movement.x);
-            //anim.SetFloat("Y", movement.y);
+        anim.SetBool("isWalk", movement != Vector2.zero);
+
+        if (movement != Vector2.zero)
+        {
+            anim.SetFloat("X", movement.x);
+            anim.SetFloat("Y", movement.y);
             //Debug.Log(body.position);
-        //}
-
-        //初期状態またはキャラが壁に当たったら、進行方向をmovement2に保存
-        if(this.flag == 0)
-        {
-            if(Input.GetKey(KeyCode.W))
-            {
-                this.flag = 1;
-                movement2.x = movement.x;
-                movement2.y = movement.y;
-            }
-
-            if(Input.GetKey(KeyCode.S))
-            {
-                this.flag = 1;
-                movement2.x = movement.x;
-                movement2.y = movement.y;
-            }
-
-            if(Input.GetKey(KeyCode.D))
-            {
-                this.flag = 1;
-                movement2.x = movement.x;
-                movement2.y = movement.y;
-            }
-
-            if(Input.GetKey(KeyCode.A))
-            {
-                this.flag = 1;
-                movement2.x = movement.x;
-                movement2.y = movement.y;
-            }
         }
-        
-        //壁に当たるまで一定の方向で動き続ける
-        else
+
+        //もしプレイヤーのいる場所が氷の場所であれば
+        if(this.transform.position.x < icezone_horizon)
         {
-            if(this.transform.position.x > icezone_horizon)
+            //安全地帯から氷に戻る場合は新たに入力を受け付ける
+            if(Iceflag == 1)
             {
-                body.MovePosition(body.position + movement2.normalized * speed);
+                this.flag = 0;
+                Iceflag = 0;
+            }
+            
+            //初期状態またはキャラが壁に当たったら、進行方向をmovement2に保存
+            if(this.flag == 0)
+            {
+                if(Input.GetKey(KeyCode.W))
+                {
+                    this.flag = 1;
+                    movement2.x = movement.x;
+                    movement2.y = movement.y;
+                }
+
+                if(Input.GetKey(KeyCode.S))
+                {
+                    this.flag = 1;
+                    movement2.x = movement.x;
+                    movement2.y = movement.y;
+                }
+
+                if(Input.GetKey(KeyCode.D))
+                {
+                    this.flag = 1;
+                    movement2.x = movement.x;
+                    movement2.y = movement.y;
+                }
+
+                if(Input.GetKey(KeyCode.A))
+                {
+                    this.flag = 1;
+                    movement2.x = movement.x;
+                    movement2.y = movement.y;
+                }
             }else
             {
-                body.MovePosition(body.position + movement.normalized * speed);
+                body.MovePosition(body.position + movement2.normalized * speed);
             }
-            //body.MovePosition(body.position + movement2.normalized * speed);
+            //Debug.Log("ice");
+
+        }else　　//氷の場所にいない場合は普通に移動
+        {
+            body.MovePosition(body.position + movement.normalized * speed);
+            //Debug.Log("no ice");
+            Iceflag = 1;
         }
         
-        Debug.Log(this.transform.position);
+        //Debug.Log(movement2);
         
     }
 
