@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class MoveCharactorController : MonoBehaviour
 {
+    public static MoveCharactorController instance = null;
+
     [SerializeField] private float speed;
     private Rigidbody2D body;
     //private Animator anim;
-    private Vector2 movement;
+    public Vector2 movement;
+    public static string direction = "初期ぽよ";
+
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         body = GetComponent<Rigidbody2D>();
         //anim = GetComponent<Animator>();
     }
@@ -23,11 +36,43 @@ public class MoveCharactorController : MonoBehaviour
             //anim.SetFloat("X", movement.x);
             //anim.SetFloat("Y", movement.y);
             //Debug.Log(movement.x);
+            
         //}
+
+        if (movement.normalized == Vector2.up){
+            direction = "上";
+        }else if (movement.normalized == Vector2.down){
+            direction = "下";
+        }else if (movement.normalized == Vector2.left){
+            direction = "左";
+        }else if (movement.normalized == Vector2.right){
+            direction = "右";
+        }
+        //Debug.Log(direction);
     }
     private void FixedUpdate()
     {
         body.MovePosition(body.position + movement.normalized * speed * Time.fixedDeltaTime);
+    }
+
+
+    public string GetMovementDirection()
+    {
+        
+
+        if (movement.normalized == Vector2.up){
+            direction = "上";
+        }else if (movement.normalized == Vector2.down){
+            direction = "下";
+        }else if (movement.normalized == Vector2.left){
+            direction = "左";
+        }else if (movement.normalized == Vector2.right){
+            direction = "右";
+        }/*else{
+            direction = "あげぽよ";
+        }*/
+        
+        return direction;
     }
 
 }
