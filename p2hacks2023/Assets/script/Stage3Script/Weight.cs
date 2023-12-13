@@ -15,31 +15,30 @@ public class Weight : MonoBehaviour
     public GameObject weightBagButton;
 
     private int selectedItemCheck = 0;
-    //public static MoveCharactorController moveController; // MoveCharactorControllerスクリプトへの参照
-    public string direction = "";
+    private bool selectedWeight = false;
     public string directioncheck = "";
 
     void Start()
     {
-        //moveController = MoveCharactorController.instance;
+        
     }
 
     void Update()
     {
         selectedItemCheck = Stage3SelectItemManager.instance.selectedItem;
         
-        //direction = moveController.GetMovementDirection();
-        //if (direction != "あげぽよ"){
             
-            directioncheck = MoveCharactorController.direction;
-            //Debug.Log(directioncheck);
-        //}
+        directioncheck = MoveCharactorController.direction;
+        
         Vector2 tmp = chara.transform.position;
 
-        if(selectedItemCheck == 4 && Input.GetKeyDown(KeyCode.F)){
+        if(selectedItemCheck == 4 || selectedItemCheck == 5 || selectedItemCheck == 6 || selectedItemCheck == 7 || selectedItemCheck == 8){
+            selectedWeight = true;
+        }
+
+        if(selectedWeight == true && Input.GetKeyDown(KeyCode.F)){
+            //if(WeightPickUp.isFlag == false){
             
-            
-                
                 // 向きによる条件分岐
                 if (directioncheck == "上")
                 {
@@ -58,11 +57,11 @@ public class Weight : MonoBehaviour
                     weight.transform.position = new Vector2(tmp.x+1, tmp.y);
                 }
             
-            WeightToFloor.pickUpPutFrag = true;
-            weight.SetActive(true);
-            weightBagButton.SetActive(false);
-            Stage3SelectItemManager.instance.selectedItem = 0;
-            
-        }
+                WeightToFloor.pickUpPutFrag = true;
+                weight.SetActive(true);
+                weightBagButton.SetActive(false);
+                Stage3SelectItemManager.instance.selectedItem = 0;
+            }
+        //}
     }
 }
