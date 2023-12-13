@@ -5,7 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class WeightPickUp : MonoBehaviour
 {
-    bool isFlag = false;
+    // Inspector
+    [SerializeField]
+    private Stage3SelectItemManager stage3selectItemManager;
+
+    public bool isFlag = false;
+    public int itemId = 0;
     public GameObject itemObject;
     public GameObject itemBagObject;
 
@@ -23,6 +28,9 @@ public class WeightPickUp : MonoBehaviour
                 WeightToFloor.pickUpPutFrag = false;
                 itemObject.SetActive(false);
                 itemBagObject.SetActive(true);
+                /*if(Stage3SelectItemManager.instance.selectedItem == 0){
+                    Stage3SelectItemManager.instance.selectedItem = itemId;
+                }*///選択していないとき拾ったら選択にする(選択している状態で拾ったとき置いちゃう)
             }
         }
     }

@@ -27,6 +27,7 @@ public class Stage3Calcifer : MonoBehaviour
         if(isFlag == true && selectedItemCheck == 2){
             if(Input.GetKeyDown(KeyCode.F)){
                 iceWallCloseCDObject.SetActive(false);
+                WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal - 200;
             }
         }
     }
