@@ -8,12 +8,22 @@ public class WeightToFloor : MonoBehaviour
     public GameObject weight10_1;
     public GameObject weight10_2;
     public GameObject weight50_1;
+    public GameObject weight50_2;
+    public GameObject weight100;
 
     public static bool pickUpPutFrag = true;//trueは置いた。falseは取った。
+    
     private bool weight10_1PutFrag = false;
     private bool weight10_1PickUpFrag = false;
+    private bool weight10_2PutFrag = false;
+    private bool weight10_2PickUpFrag = false;
     private bool weight50_1PutFrag = false;
     private bool weight50_1PickUpFrag = false;
+    private bool weight50_2PutFrag = false;
+    private bool weight50_2PickUpFrag = false;
+    private bool weight100PutFrag = false;
+    private bool weight100PickUpFrag = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,32 +67,97 @@ public class WeightToFloor : MonoBehaviour
             }
         }
 
+        if(this.gameObject.GetComponent<Collider2D>().OverlapPoint(weight10_2.transform.position)){
+            if(weight10_2.activeSelf == true){
+                if(pickUpPutFrag == true && weight10_2PutFrag == false){
+                    weight10_2PutFrag = true;
+                    weight10_2PickUpFrag = false;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal + 10;
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal + 10;
+                    }
+                }
+            }else{
+                if(pickUpPutFrag == false && weight10_2PickUpFrag == false){
+                    weight10_2PickUpFrag = true;
+                    weight10_2PutFrag = false;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal - 10;
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal - 10;
+                    }
+                }
+            }
+        }
+
         if(this.gameObject.GetComponent<Collider2D>().OverlapPoint(weight50_1.transform.position)){
-            //Debug.Log("重り50_1");
             if(weight50_1.activeSelf == true){
                 if(pickUpPutFrag == true && weight50_1PutFrag == false){
                     weight50_1PutFrag = true;
                     weight50_1PickUpFrag = false;
-                    //WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal + 50;
                     if(this.gameObject.name == "LeftFloor"){
                         LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal + 50;
-                        //Debug.Log("左に重り50_1置いた");
                     }else{
                         RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal + 50;
-                        //Debug.Log("右に重り50_1置いた");
                     }
                 }
             }else{
                 if(pickUpPutFrag == false && weight50_1PickUpFrag == false){
                     weight50_1PickUpFrag = true;
                     weight50_1PutFrag = false;
-                    //WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal - 50;
                     if(this.gameObject.name == "LeftFloor"){
                         LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal - 50;
-                        //Debug.Log("左に重り50_1取った");
                     }else{
                         RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal - 50;
-                        //Debug.Log("右に重り50_1取った");
+                    }
+                }
+            }
+        }
+
+        if(this.gameObject.GetComponent<Collider2D>().OverlapPoint(weight50_2.transform.position)){
+            if(weight50_2.activeSelf == true){
+                if(pickUpPutFrag == true && weight50_2PutFrag == false){
+                    weight50_2PutFrag = true;
+                    weight50_2PickUpFrag = false;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal + 50;
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal + 50;
+                    }
+                }
+            }else{
+                if(pickUpPutFrag == false && weight50_2PickUpFrag == false){
+                    weight50_2PickUpFrag = true;
+                    weight50_2PutFrag = false;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal - 50;
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal - 50;
+                    }
+                }
+            }
+        }
+
+        if(this.gameObject.GetComponent<Collider2D>().OverlapPoint(weight100.transform.position)){
+            if(weight100.activeSelf == true){
+                if(pickUpPutFrag == true && weight100PutFrag == false){
+                    weight100PutFrag = true;
+                    weight100PickUpFrag = false;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal + 100;
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal + 100;
+                    }
+                }
+            }else{
+                if(pickUpPutFrag == false && weight100PickUpFrag == false){
+                    weight100PickUpFrag = true;
+                    weight100PutFrag = false;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal - 100;
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal - 100;
                     }
                 }
             }
