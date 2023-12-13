@@ -6,6 +6,7 @@ public class WeightToFloor : MonoBehaviour
 {
     public int weightValue = 0;
     public GameObject weight10_1;
+    public GameObject weight10_2;
     public GameObject weight50_1;
 
     public static bool pickUpPutFrag = true;//trueは置いた。falseは取った。
@@ -30,15 +31,28 @@ public class WeightToFloor : MonoBehaviour
                 if(pickUpPutFrag == true && weight10_1PutFrag == false){
                     weight10_1PutFrag = true;
                     weight10_1PickUpFrag = false;
-                    WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal + 10;
-                    Debug.Log("重り10_1置いた");
+                    
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal + 10;
+                        //Debug.Log("左に重り10_1置いた");
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal + 10;
+                        //Debug.Log("右に重り10_1置いた");
+                    }
+                    
                 }
             }else{
                 if(pickUpPutFrag == false && weight10_1PickUpFrag == false){
                     weight10_1PickUpFrag = true;
                     weight10_1PutFrag = false;
-                    WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal - 10;
-                    Debug.Log("重り10_1取った");
+                    //WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal - 10;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal - 10;
+                        //Debug.Log("左に重り10_1取った");
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal - 10;
+                        //Debug.Log("右に重り10_1取った");
+                    }
                 }
             }
         }
@@ -49,15 +63,27 @@ public class WeightToFloor : MonoBehaviour
                 if(pickUpPutFrag == true && weight50_1PutFrag == false){
                     weight50_1PutFrag = true;
                     weight50_1PickUpFrag = false;
-                    WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal + 50;
-                    Debug.Log("重り50_1置いた");
+                    //WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal + 50;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal + 50;
+                        //Debug.Log("左に重り50_1置いた");
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal + 50;
+                        //Debug.Log("右に重り50_1置いた");
+                    }
                 }
             }else{
                 if(pickUpPutFrag == false && weight50_1PickUpFrag == false){
                     weight50_1PickUpFrag = true;
                     weight50_1PutFrag = false;
-                    WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal - 50;
-                    Debug.Log("重り50_1取った");
+                    //WeightFloorValue.floorWeightTotal = WeightFloorValue.floorWeightTotal - 50;
+                    if(this.gameObject.name == "LeftFloor"){
+                        LeftWeightFloorValue.leftFloorWeightTotal = LeftWeightFloorValue.leftFloorWeightTotal - 50;
+                        //Debug.Log("左に重り50_1取った");
+                    }else{
+                        RightWeightFloorValue.rightFloorWeightTotal = RightWeightFloorValue.rightFloorWeightTotal - 50;
+                        //Debug.Log("右に重り50_1取った");
+                    }
                 }
             }
         }
