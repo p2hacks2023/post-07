@@ -10,10 +10,18 @@ public class PickUpItem : MonoBehaviour
     public GameObject itemObject;
     public GameObject itemBagObject;
 
+    public GameObject itemExplanationTextPanel;
+
+
+
+    //bool isItemtextFlag = false;
+    //public Text itemExplanationText;
+    //public String itemName;
+
 
     void Start()
     {
-        
+        itemExplanationTextPanel.SetActive(false);
     }
 
     void Update()
@@ -23,8 +31,15 @@ public class PickUpItem : MonoBehaviour
                 itemObject = this.gameObject;
                 itemObject.SetActive(false);
                 itemBagObject.SetActive(true);
+
+                itemExplanationTextPanel.SetActive(true);
+                //isItemtextFlag = true;
             }
+            
         }
+        
+
+        
     }
 
     void OnTriggerEnter2D(Collider2D col)
