@@ -8,6 +8,7 @@ public class Stage1Key : MonoBehaviour
     [SerializeField]
     private Stage1SelectItemManager stage1selectItemManager;
 
+
     bool isFlag = false;
     public GameObject gateCDObject;
     public GameObject gateCloseCDObject;
@@ -18,7 +19,6 @@ public class Stage1Key : MonoBehaviour
     
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -26,15 +26,26 @@ public class Stage1Key : MonoBehaviour
     {
 
         selectedItemCheck = Stage1SelectItemManager.instance.selectedItem;
-        
-        if(isFlag == true && selectedItemCheck == 3){
-            if(Input.GetKeyDown(KeyCode.F)){
+
+        if(isFlag == true)
+        {
+            if(selectedItemCheck == 3 && Input.GetKeyDown(KeyCode.F))
+            {
                 gateCloseCDObject.SetActive(false);
                 bagButtonObject.SetActive(false);
                 selectImageObject.SetActive(false);
                 Stage1SelectItemManager.instance.selectedItem = 0;
             }
         }
+        
+        /*if(isFlag == true && selectedItemCheck == 3){
+            if(Input.GetKeyDown(KeyCode.F)){
+                gateCloseCDObject.SetActive(false);
+                bagButtonObject.SetActive(false);
+                selectImageObject.SetActive(false);
+                Stage1SelectItemManager.instance.selectedItem = 0;
+            }
+        }*/
     }
 
     void OnTriggerEnter2D(Collider2D col)

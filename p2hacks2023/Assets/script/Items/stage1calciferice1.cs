@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage1Calcifer : MonoBehaviour
+public class stage1calciferice1 : MonoBehaviour
 {
-    // Inspector
-    [SerializeField]
     private Stage1SelectItemManager stage1selectItemManager;
 
-    bool isFlag = false;
-    public GameObject iceWallCDObject;
-    public GameObject iceWallCloseCDObject;
-    //[SerializeField]
-    //private GameObject iceExplanationTextPanel;
+    bool isFlag1 = false;
+    bool isFlag2 = false;
+    public GameObject iceWallCDObject1;
+    public GameObject iceWallCloseCDObject1;
+
+    [SerializeField]
+    private GameObject iceExplanationTextPanel;
 
     private int selectedItemCheck = 0;
-    
+
+    // Start is called before the first frame update
     void Start()
     {
-        //iceExplanationTextPanel.SetActive(false);
+        iceExplanationTextPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,13 +27,17 @@ public class Stage1Calcifer : MonoBehaviour
     {
         selectedItemCheck = Stage1SelectItemManager.instance.selectedItem;
 
-        if(isFlag == true)
+        if(isFlag1 == true)
         {
-            //iceExplanationTextPanel.SetActive(true);
+            if(isFlag2 == false)
+            {
+                iceExplanationTextPanel.SetActive(true);
+                isFlag2 = true;
+            }
 
             if(selectedItemCheck == 2 && Input.GetKeyDown(KeyCode.F))
             {
-                iceWallCloseCDObject.SetActive(false);
+                iceWallCloseCDObject1.SetActive(false);
             }
         }
 
@@ -43,15 +48,13 @@ public class Stage1Calcifer : MonoBehaviour
             }
         }*/
     }
-
     void OnTriggerEnter2D(Collider2D col)
     {
-        isFlag = true;
+        isFlag1 = true;
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        isFlag = false;
+        isFlag1 = false;
     }
-    
 }
