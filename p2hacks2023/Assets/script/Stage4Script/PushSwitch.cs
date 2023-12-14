@@ -27,6 +27,7 @@ public class PushSwitch : MonoBehaviour
                     SwitchManager.switchP3Flag = true;
                     SwitchManager.switchString += "p3";
                 }
+                Debug.Log(SwitchManager.switchString);
             }
             
         }

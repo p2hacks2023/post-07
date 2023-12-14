@@ -28,6 +28,8 @@ public class SwitchManager : MonoBehaviour
             switchP1Flag = false;
             switchP2Flag = false;
             switchP3Flag = false;
+            switchString = "";
+            Debug.Log("やりなおし");
         }
     }
 }
