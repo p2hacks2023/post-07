@@ -8,6 +8,11 @@ public class LightSwitch : MonoBehaviour
     public GameObject SwitchGlobalLight;
     public GameObject GlobalLight;
     public GameObject CharaLight;
+    public GameObject EndCD;
+
+    public GameObject FileLoadText;
+    public GameObject TextPanelImage;
+    public GameObject LightSwitchTextFileLoad;
 
     void Start()
     {
@@ -21,6 +26,11 @@ public class LightSwitch : MonoBehaviour
                 GlobalLight.SetActive(false);
                 SwitchGlobalLight.SetActive(true);
                 CharaLight.SetActive(false);
+
+                EndCD.SetActive(true);
+                FileLoadText.SetActive(true);
+                TextPanelImage.SetActive(true);
+                LightSwitchTextFileLoad.SetActive(true);
             }
             
         }

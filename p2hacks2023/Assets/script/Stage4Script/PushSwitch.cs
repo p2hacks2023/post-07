@@ -6,6 +6,9 @@ public class PushSwitch : MonoBehaviour
 {
     public int switchNumber = 0;
     private bool isFlag = false;
+
+    public GameObject PushSwitchText;
+    public GameObject TextPanelImage;
     
     void Start()
     {
@@ -17,6 +20,9 @@ public class PushSwitch : MonoBehaviour
         //Debug.Log("isFlag:" + isFlag);
         if(isFlag == true){
             if(Input.GetKeyDown(KeyCode.F)){
+                PushSwitchText.SetActive(true);
+                TextPanelImage.SetActive(true);
+                
                 if(switchNumber == 1){
                     SwitchManager.switchP1Flag = true;
                     SwitchManager.switchString += "p1";

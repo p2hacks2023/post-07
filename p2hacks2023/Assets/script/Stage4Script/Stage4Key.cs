@@ -15,6 +15,9 @@ public class Stage4Key : MonoBehaviour
     public GameObject bagButtonObject;
     public GameObject selectImageObject;
 
+    public GameObject GateOpenText;
+    public GameObject TextPanelImage;
+
     private int selectedItemCheck = 0;
 
     void Start()
@@ -30,6 +33,9 @@ public class Stage4Key : MonoBehaviour
         {
             if(selectedItemCheck == 10 && Input.GetKeyDown(KeyCode.F))
             {
+                GateOpenText.SetActive(true);
+                TextPanelImage.SetActive(true);
+
                 gateCloseCDObject.SetActive(false);
                 bagButtonObject.SetActive(false);
                 selectImageObject.SetActive(false);

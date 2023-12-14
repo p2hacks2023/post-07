@@ -15,7 +15,7 @@ public class DestroyObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             destroygameObject.SetActive(false);
         }

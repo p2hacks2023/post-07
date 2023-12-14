@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class FadeControll : MonoBehaviour
 {
+    public GameObject StartText;
+    public GameObject TextPanelTmage;
     [SerializeField] private GameObject FadeTarget;
     Color color;
 
@@ -23,6 +25,8 @@ public class FadeControll : MonoBehaviour
         FadeTarget.GetComponent<Image>().color = color;
 
         if(color.a <= 0.45f){
+            StartText.SetActive(true);
+            TextPanelTmage.SetActive(true);
             FadeTarget.SetActive(false);
         }
     }
