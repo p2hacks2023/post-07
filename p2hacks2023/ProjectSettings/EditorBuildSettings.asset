@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Map_mozu.unity
+    guid: 50e9e453220859f469f9187d89a4e183
+  - enabled: 1
+    path: Assets/Scenes/Stage1_mozu.unity
+    guid: f8615edc90bf2df479e7ab4b7c9033fc
+  - enabled: 1
+    path: Assets/Scenes/Stage2_mozu.unity
+    guid: 66ce7e09f962c6a4ba9068748c8f43b4
+  - enabled: 1
+    path: Assets/Scenes/Stage3_mozu.unity
+    guid: 283193e8606e349468c748686a288d2f
+  - enabled: 1
+    path: Assets/Scenes/Stage4_pen.unity
+    guid: ce73d0a3364eaa24d92babdf6be86d60
   m_configObjects: {}
