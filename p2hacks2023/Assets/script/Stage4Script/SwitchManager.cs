@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwitchManager : MonoBehaviour
 {
+    public GameObject Stage4KeyBagButton;
+
     public static bool switchP1Flag = false;
     public static bool switchP2Flag = false;
     public static bool switchP3Flag = false;
@@ -21,6 +23,7 @@ public class SwitchManager : MonoBehaviour
     {
         if(switchString == gateOpenString && gateOpenFlag == false){
             gateOpenFlag = true;
+            Stage4KeyBagButton.SetActive(true);
             Debug.Log("開いちゃ");
         }
         

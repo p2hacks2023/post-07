@@ -46,11 +46,17 @@ TagManager:
   - name: background
     uniqueID: 3568600115
     locked: 0
+  - name: iceWall
+    uniqueID: 811065823
+    locked: 0
   - name: playerAndItem
     uniqueID: 3903795805
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: TextPanel
+    uniqueID: 379506381
     locked: 0
   - name: frontground
     uniqueID: 2649758857
