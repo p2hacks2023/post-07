@@ -14,10 +14,11 @@ public class WeightPickUp : MonoBehaviour
     public GameObject itemObject;
     public GameObject itemBagObject;
 
+    public GameObject weightExplanationTextPanel;
 
     void Start()
     {
-        
+        weightExplanationTextPanel.SetActive(false);
     }
 
     void Update()
@@ -28,6 +29,9 @@ public class WeightPickUp : MonoBehaviour
                 WeightToFloor.pickUpPutFrag = false;
                 itemObject.SetActive(false);
                 itemBagObject.SetActive(true);
+
+                weightExplanationTextPanel.SetActive(true);
+
                 /*if(Stage3SelectItemManager.instance.selectedItem == 0){
                     Stage3SelectItemManager.instance.selectedItem = itemId;
                 }*///選択していないとき拾ったら選択にする(選択している状態で拾ったとき置いちゃう)
