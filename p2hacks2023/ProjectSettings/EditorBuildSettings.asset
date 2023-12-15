@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage3_mozu.unity
     guid: 283193e8606e349468c748686a288d2f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage4_pen.unity
     guid: ce73d0a3364eaa24d92babdf6be86d60
+  - enabled: 1
+    path: Assets/Scenes/Stage4_mozu.unity
+    guid: ed295e636ece3e14f9ccdc8c00b29ac8
   m_configObjects: {}
