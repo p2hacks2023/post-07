@@ -52,6 +52,9 @@ TagManager:
   - name: playerAndItem
     uniqueID: 3903795805
     locked: 0
+  - name: front
+    uniqueID: 2773345947
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
