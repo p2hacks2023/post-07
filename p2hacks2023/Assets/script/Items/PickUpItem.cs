@@ -9,8 +9,10 @@ public class PickUpItem : MonoBehaviour
     bool isFlag = false;
     public GameObject itemObject;
     public GameObject itemBagObject;
+    public GameObject itemText;
+    public GameObject TextPanelImage;
 
-    public GameObject itemExplanationTextPanel;
+    //public GameObject itemExplanationTextPanel;
 
 
 
@@ -21,7 +23,7 @@ public class PickUpItem : MonoBehaviour
 
     void Start()
     {
-        itemExplanationTextPanel.SetActive(false);
+        //itemExplanationTextPanel.SetActive(false);
     }
 
     void Update()
@@ -32,7 +34,10 @@ public class PickUpItem : MonoBehaviour
                 itemObject.SetActive(false);
                 itemBagObject.SetActive(true);
 
-                itemExplanationTextPanel.SetActive(true);
+                itemText.SetActive(true);
+                TextPanelImage.SetActive(true);
+
+                //itemExplanationTextPanel.SetActive(true);
                 //isItemtextFlag = true;
             }
             

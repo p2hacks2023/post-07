@@ -6,6 +6,9 @@ public class PushSwitch : MonoBehaviour
 {
     public int switchNumber = 0;
     private bool isFlag = false;
+
+    public GameObject PushSwitchText;
+    public GameObject TextPanelImage;
     
     void Start()
     {
@@ -17,20 +20,28 @@ public class PushSwitch : MonoBehaviour
         //Debug.Log("isFlag:" + isFlag);
         if(isFlag == true){
             if(Input.GetKeyDown(KeyCode.F)){
+                PushSwitchText.SetActive(true);
+                TextPanelImage.SetActive(true);
+                
                 if(switchNumber == 1){
                     SwitchManager.switchP1Flag = true;
                     SwitchManager.switchString += "p1";
+                    SwitchManager.switchPushNum++;
+                    //Debug.Log(SwitchManager.switchPushNum);
                 }else if(switchNumber == 2){
                     SwitchManager.switchP2Flag = true;
                     SwitchManager.switchString += "p2";
+                    SwitchManager.switchPushNum++;
                 }else if(switchNumber == 3){
                     SwitchManager.switchP3Flag = true;
                     SwitchManager.switchString += "p3";
+                    SwitchManager.switchPushNum++;
                 }
+                //Debug.Log(SwitchManager.switchString);
             }
             
         }
-        //Debug.Log(isFlag);
+        
     }
 
     void OnTriggerEnter2D(Collider2D col){

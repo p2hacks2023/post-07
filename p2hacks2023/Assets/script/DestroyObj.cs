@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyObj : MonoBehaviour
 {
     public GameObject destroygameObject;
+    public GameObject TextPanelImage;
 
     // Start is called before the first frame update
     void Start()
@@ -15,9 +16,10 @@ public class DestroyObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             destroygameObject.SetActive(false);
+            TextPanelImage.SetActive(false);
         }
     }
 }
