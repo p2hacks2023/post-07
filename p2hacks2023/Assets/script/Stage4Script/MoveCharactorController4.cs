@@ -12,6 +12,8 @@ public class MoveCharactorController4 : MonoBehaviour
     public Vector2 movement;
     public static string direction = "初期ぽよ";
 
+    public static bool isText　= false; //テキスト表示中かどうかのフラグ
+
     
     // Start is called before the first frame update
     void Start()
@@ -57,8 +59,8 @@ public class MoveCharactorController4 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //タイマーが0でなければ動く
-        if(TimeScript4.totalTime4 > 0f){
+        //タイマーが0またはテキスト表示中でなければ動く
+        if(TimeScript4.totalTime4 > 0f && isText == false){
             body.MovePosition(body.position + movement.normalized * speed * Time.fixedDeltaTime);
         }
         
