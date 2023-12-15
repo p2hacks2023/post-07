@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCharactorController : MonoBehaviour
+public class MoveCharacterController3 : MonoBehaviour
 {
-    public static MoveCharactorController instance = null;
+    public static MoveCharacterController3 instance = null;
 
     [SerializeField] private float speed;
     private Rigidbody2D body;
     private Animator anim;
     public Vector2 movement;
     public static string direction = "初期ぽよ";
+
 
     private void Awake()
     {
@@ -53,7 +54,7 @@ public class MoveCharactorController : MonoBehaviour
     private void FixedUpdate()
     {
         //タイマーが0でなければ動く
-        if(TimeScript.totalTime > 0f){
+        if(TimeScript3.totalTime3 > 0f){
             body.MovePosition(body.position + movement.normalized * speed * Time.fixedDeltaTime);
         }
         
@@ -78,5 +79,4 @@ public class MoveCharactorController : MonoBehaviour
         
         return direction;
     }
-
 }

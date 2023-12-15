@@ -79,15 +79,23 @@ public class MoveCharactorControllerIce : MonoBehaviour
                 }
             }else
             {
-                body.MovePosition(body.position + movement2.normalized * speed);
+                //制限時間以内の場合
+                if(TimeScript2.totalTime2 > 0)
+                {
+                    body.MovePosition(body.position + movement2.normalized * speed);
+                }
+                
             }
             //Debug.Log("ice");
 
-        }else　　//氷の場所にいない場合は普通に移動
+        }else　　//氷の場所にいないかつ時間以内の場合は普通に移動
         {
-            body.MovePosition(body.position + movement.normalized * speed);
-            //Debug.Log("no ice");
-            Iceflag = 1;
+            if(TimeScript2.totalTime2 > 0){
+                body.MovePosition(body.position + movement.normalized * speed);
+                //Debug.Log("no ice");
+                Iceflag = 1;
+            }
+            
         }
         
         //Debug.Log(movement2);
