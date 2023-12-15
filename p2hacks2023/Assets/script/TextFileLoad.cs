@@ -24,6 +24,8 @@ public class TextFileLoad : MonoBehaviour
         splitText = textData.Split(char.Parse("\n"));
  
         textLabel.text = splitText[currentNum];
+        MoveCharactorController.isText = true;
+        TimeScript.isText = true;
     }
  
     private void Update(){
@@ -33,6 +35,8 @@ public class TextFileLoad : MonoBehaviour
                 currentNum++;
                 
             }else{
+                MoveCharactorController.isText = false;
+                TimeScript.isText = false;
                 TextPanelTmage.SetActive(false);
                 Text.SetActive(false);
                 this.gameObject.SetActive(false);

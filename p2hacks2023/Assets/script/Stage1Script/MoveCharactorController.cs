@@ -11,6 +11,7 @@ public class MoveCharactorController : MonoBehaviour
     private Animator anim;
     public Vector2 movement;
     public static string direction = "初期ぽよ";
+    public static bool isText = false;
 
     private void Awake()
     {
@@ -52,8 +53,8 @@ public class MoveCharactorController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //タイマーが0でなければ動く
-        if(TimeScript.totalTime > 0f){
+        //タイマーが0でまたはテキストが流れている最中なければ動く
+        if(TimeScript.totalTime > 0f && isText == false){
             body.MovePosition(body.position + movement.normalized * speed * Time.fixedDeltaTime);
         }
         
