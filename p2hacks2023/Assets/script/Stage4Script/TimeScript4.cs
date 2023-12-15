@@ -15,6 +15,8 @@ public class TimeScript4 : MonoBehaviour
 	private float oldSeconds;
 	private Text timerText;
 
+	public static bool isText = false; //テキストを表示しているかどうかのフラグ
+
 	// 時間切れ時に表示するパネル
 	[SerializeField]
 	private GameObject GameOverPanel;
@@ -26,8 +28,11 @@ public class TimeScript4 : MonoBehaviour
     void Start()
     {
         totalTime4 = TimeScript3.totalTime3 + addseconds;
+		minute = (int) totalTime4 / 60;
+		seconds = totalTime4 - minute * 60;
 		oldSeconds = 0f;
 		timerText = GetComponentInChildren<Text>();
+		timerText.text = minute.ToString("00") + ":" + ((int) seconds).ToString("00");
     }
 
     // Update is called once per frame
@@ -37,20 +42,29 @@ public class TimeScript4 : MonoBehaviour
 		if (totalTime4 <= 0f) {
 			return;
 		}
-		//　一旦トータルの制限時間を計測；
-		//totalTime = minute * 60 + seconds;
-		totalTime4 -= Time.deltaTime;
+
+		//テキスト表示中でなければ
+		if(isText == false)
+		{
+			//　一旦トータルの制限時間を計測；
+			//totalTime = minute * 60 + seconds;
+			totalTime4 -= Time.deltaTime;
  
-		//　再設定
-		minute = (int) totalTime4 / 60;
-		seconds = totalTime4 - minute * 60;
+			//　再設定
+			minute = (int) totalTime4 / 60;
+			seconds = totalTime4 - minute * 60;
         
  
-		//　タイマー表示用UIテキストに時間を表示する
-		if((int)seconds != (int)oldSeconds) {
-			timerText.text = minute.ToString("00") + ":" + ((int) seconds).ToString("00");
+			//　タイマー表示用UIテキストに時間を表示する
+			if((int)seconds != (int)oldSeconds) {
+				timerText.text = minute.ToString("00") + ":" + ((int) seconds).ToString("00");
+			}
+			oldSeconds = seconds;
 		}
-		oldSeconds = seconds;
+
+
+
+		
 		//　制限時間以下になったらゲームオーバーパネルを表示する
 		if(totalTime4 <= 0f) {
 			GameOverPanel.SetActive(true);
