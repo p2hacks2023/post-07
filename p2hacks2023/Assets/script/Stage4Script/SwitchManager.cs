@@ -18,7 +18,7 @@ public class SwitchManager : MonoBehaviour
     public static string switchString = "";
     private string gateOpenString = "p1p2p3";
     private bool gateOpenFlag = false;
-    private bool switchResetFlag = false;//使わないかも
+    //private bool switchResetFlag = false;//使わないかも
     
     void Start()
     {
@@ -33,7 +33,7 @@ public class SwitchManager : MonoBehaviour
             
        
         }
-        Debug.Log(switchPushNum);
+        //Debug.Log(switchPushNum);
         if(switchPushNum == 3 && TextPanelImage.activeSelf == false){
             if(gateOpenFlag == true){
                 SwitchOpenTextFileLoad.SetActive(true);
@@ -58,7 +58,7 @@ public class SwitchManager : MonoBehaviour
             switchP2Flag = false;
             switchP3Flag = false;
             switchString = "";
-            switchResetFlag = true;
+            //switchResetFlag = true;
             
             Debug.Log("やりなおし");
         }
