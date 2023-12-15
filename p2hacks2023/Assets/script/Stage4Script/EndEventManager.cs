@@ -6,6 +6,7 @@ public class EndEventManager : MonoBehaviour
 {
     public static int checkEndCD = 0;
     public GameObject EndEventPanel;
+    public GameObject TextPanelImage;
 
     void Start()
     {
@@ -14,7 +15,7 @@ public class EndEventManager : MonoBehaviour
 
     void Update()
     {
-        if(checkEndCD == 2){
+        if(checkEndCD == 2 && TextPanelImage.activeSelf == false){
             EndEventPanel.SetActive(true);
         }
         

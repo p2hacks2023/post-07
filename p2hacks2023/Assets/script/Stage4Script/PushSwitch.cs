@@ -26,18 +26,22 @@ public class PushSwitch : MonoBehaviour
                 if(switchNumber == 1){
                     SwitchManager.switchP1Flag = true;
                     SwitchManager.switchString += "p1";
+                    SwitchManager.switchPushNum++;
+                    //Debug.Log(SwitchManager.switchPushNum);
                 }else if(switchNumber == 2){
                     SwitchManager.switchP2Flag = true;
                     SwitchManager.switchString += "p2";
+                    SwitchManager.switchPushNum++;
                 }else if(switchNumber == 3){
                     SwitchManager.switchP3Flag = true;
                     SwitchManager.switchString += "p3";
+                    SwitchManager.switchPushNum++;
                 }
                 //Debug.Log(SwitchManager.switchString);
             }
             
         }
-        //Debug.Log(isFlag);
+        
     }
 
     void OnTriggerEnter2D(Collider2D col){
