@@ -7,9 +7,14 @@ public class Stage1Key : MonoBehaviour
     // Inspector
     [SerializeField]
     private Stage1SelectItemManager stage1selectItemManager;
+    [SerializeField]
+    private GameObject gateExplanationText;
+    [SerializeField]
+    private GameObject TextPanelImage;
 
 
     bool isFlag = false;
+    bool isFlag2 = false;
     public GameObject gateCDObject;
     public GameObject gateCloseCDObject;
     public GameObject bagButtonObject;
@@ -29,6 +34,13 @@ public class Stage1Key : MonoBehaviour
 
         if(isFlag == true)
         {
+            if(isFlag2 == false)
+            {
+                gateExplanationText.SetActive(true);
+                TextPanelImage.SetActive(true);
+                isFlag2 = true;
+            }
+
             if(selectedItemCheck == 3 && Input.GetKeyDown(KeyCode.F))
             {
                 gateCloseCDObject.SetActive(false);

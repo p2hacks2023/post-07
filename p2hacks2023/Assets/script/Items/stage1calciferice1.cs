@@ -12,14 +12,17 @@ public class stage1calciferice1 : MonoBehaviour
     public GameObject iceWallCloseCDObject1;
 
     [SerializeField]
-    private GameObject iceExplanationTextPanel;
+    private GameObject iceExplanationText;
+    [SerializeField]
+    private GameObject TextPanelImage;
 
     private int selectedItemCheck = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        iceExplanationTextPanel.SetActive(false);
+        iceExplanationText.SetActive(false);
+        TextPanelImage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,7 +34,8 @@ public class stage1calciferice1 : MonoBehaviour
         {
             if(isFlag2 == false)
             {
-                iceExplanationTextPanel.SetActive(true);
+                iceExplanationText.SetActive(true);
+                TextPanelImage.SetActive(true);
                 isFlag2 = true;
             }
 
@@ -39,7 +43,10 @@ public class stage1calciferice1 : MonoBehaviour
             {
                 iceWallCloseCDObject1.SetActive(false);
             }
-        }
+        }/*else if(iceWallCloseCDObject1.activeSelf == true){
+            iceExplanationText.SetActive(false);
+            TextPanelImage.SetActive(false);
+        }*/
 
         /*if(isFlag == true && selectedItemCheck == 2){
             if(Input.GetKeyDown(KeyCode.F)){
@@ -51,6 +58,7 @@ public class stage1calciferice1 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         isFlag1 = true;
+        isFlag2 = false;
     }
 
     void OnTriggerExit2D(Collider2D col)
