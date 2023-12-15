@@ -12,6 +12,8 @@ public class MoveCharacterController3 : MonoBehaviour
     public Vector2 movement;
     public static string direction = "初期ぽよ";
 
+    public static bool isText = false; //テキスト表示中かどうかのフラグ
+
 
     private void Awake()
     {
@@ -53,8 +55,8 @@ public class MoveCharacterController3 : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //タイマーが0でなければ動く
-        if(TimeScript3.totalTime3 > 0f){
+        //タイマーが0でないかつテキスト表示中でなければ動く
+        if(TimeScript3.totalTime3 > 0f && isText == false){
             body.MovePosition(body.position + movement.normalized * speed * Time.fixedDeltaTime);
         }
         
