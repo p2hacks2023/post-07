@@ -12,6 +12,7 @@ public class Stage4Key : MonoBehaviour
     bool isFlag = false;
     public GameObject gateCDObject;
     public GameObject gateCloseCDObject;
+    public GameObject gateCloseBackground;
     public GameObject bagButtonObject;
     public GameObject selectImageObject;
 
@@ -39,6 +40,8 @@ public class Stage4Key : MonoBehaviour
                 gateCloseCDObject.SetActive(false);
                 bagButtonObject.SetActive(false);
                 selectImageObject.SetActive(false);
+                gateCloseBackground.SetActive(false);
+
                 Stage4SelectItemManager.instance.selectedItem = 0;
             }
         }
