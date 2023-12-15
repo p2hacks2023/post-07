@@ -28,7 +28,8 @@ public class Weight : MonoBehaviour
         selectedItemCheck = Stage3SelectItemManager.instance.selectedItem;
         
             
-        directioncheck = MoveCharactorController.direction;
+        directioncheck = MoveCharacterController3.direction;
+        //Debug.Log(directioncheck);
         
         Vector2 tmp = chara.transform.position;
 

@@ -21,7 +21,7 @@ public class FadeControll : MonoBehaviour
     }
 
     void Update(){
-        color.a -= 0.0008f;
+        color.a -= 0.008f;
         FadeTarget.GetComponent<Image>().color = color;
 
         if(color.a <= 0.45f){

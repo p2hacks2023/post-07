@@ -17,13 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage3_mozu.unity
     guid: 283193e8606e349468c748686a288d2f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage4_pen.unity
     guid: ce73d0a3364eaa24d92babdf6be86d60
   - enabled: 1
-    path: Assets/Scenes/Ending1_mozu.unity
-    guid: c2af020e990166b4ca93a7cfe05a5465
-  - enabled: 1
-    path: Assets/Scenes/Ending2_mozu.unity
-    guid: 52acf7ed27a00384e9cd4522134510fc
+
   m_configObjects: {}
