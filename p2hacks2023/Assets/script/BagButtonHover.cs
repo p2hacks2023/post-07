@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class BagButtonHover : MonoBehaviour
 {
-public GameObject OpenExplanationText;
-public GameObject CloseExplanationText;
+public string ExplanationText = "";
+
+public GameObject OpenExplanation;
+public Text OpenExplanationText;
 
     void Start()
     {
@@ -16,7 +18,7 @@ public GameObject CloseExplanationText;
     // カーソルがボタンに入ったときに呼ばれるメソッド
     public void OnPointerEnter()
     {
-        OpenExplanationText.SetActive(true);
-        CloseExplanationText.SetActive(false);
+        OpenExplanation.SetActive(true);
+        OpenExplanationText.text = ExplanationText;
     }
 }
