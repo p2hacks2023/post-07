@@ -13,6 +13,8 @@ public class MoveCharactorControllerIce : MonoBehaviour
     private Vector2 restartpoint;
     private int flag = 0;   //移動の入力を受け付けるかどうかのフラグ(stage2専用)
     private int Iceflag = 0;   //安全地帯に行ったかフラグ(stage2専用)
+
+    public static bool isText; //テキスト出力中かどうかのフラグ
     
 
     // Start is called before the first frame update
@@ -79,8 +81,8 @@ public class MoveCharactorControllerIce : MonoBehaviour
                 }
             }else
             {
-                //制限時間以内の場合
-                if(TimeScript2.totalTime2 > 0)
+                //制限時間以内かつテキスト再生中ではない場合
+                if(TimeScript2.totalTime2 > 0　&& isText == false)
                 {
                     body.MovePosition(body.position + movement2.normalized * speed);
                 }
@@ -88,9 +90,9 @@ public class MoveCharactorControllerIce : MonoBehaviour
             }
             //Debug.Log("ice");
 
-        }else　　//氷の場所にいないかつ時間以内の場合は普通に移動
+        }else　　//氷の場所にいないかつ時間以内かつテキスト再生中ではない場合は普通に移動
         {
-            if(TimeScript2.totalTime2 > 0){
+            if(TimeScript2.totalTime2 > 0 && isText == false){
                 body.MovePosition(body.position + movement.normalized * speed);
                 //Debug.Log("no ice");
                 Iceflag = 1;
