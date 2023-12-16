@@ -6,8 +6,24 @@ using UnityEngine.SceneManagement;
 public class changeScene : MonoBehaviour
 {
     
+    public bool StageButton;
+    public GameObject stageClearText;
+    
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        if(StageButton == true)
+        {
+            if(stageClearText.activeSelf)
+            {
+                SceneManager.LoadScene(sceneName);
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        
+        
+        
     }
 }
