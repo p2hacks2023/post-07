@@ -19,6 +19,8 @@ public class Stage1Key : MonoBehaviour
     public GameObject gateCloseCDObject;
     public GameObject bagButtonObject;
     public GameObject selectImageObject;
+    public AudioSource audioSource; 
+    public AudioClip audioClip;
 
     private int selectedItemCheck = 0;
     
@@ -46,6 +48,7 @@ public class Stage1Key : MonoBehaviour
                 gateCloseCDObject.SetActive(false);
                 bagButtonObject.SetActive(false);
                 selectImageObject.SetActive(false);
+                audioSource.PlayOneShot(audioClip);
                 Stage1SelectItemManager.instance.selectedItem = 0;
             }
         }
