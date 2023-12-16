@@ -31,6 +31,6 @@ public class Ending : MonoBehaviour
         }
 
         fadePanel.color = endColor;  // フェードが完了したら最終色に設定
-        SceneManager.LoadScene("Map_mozu"); // シーンをロードしてメニューシーンに遷移
+        SceneManager.LoadScene("Title_pen"); // シーンをロードしてメニューシーンに遷移
     }
 }
