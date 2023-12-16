@@ -4632,6 +4632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageButton: 0
   stageClearText: {fileID: 0}
+  SelectEnding: 0
+  EndEventPanel: {fileID: 0}
 --- !u!114 &661613269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6886,6 +6888,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageButton: 0
   stageClearText: {fileID: 0}
+  SelectEnding: 0
+  EndEventPanel: {fileID: 0}
 --- !u!114 &1246666181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8491,6 +8495,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageButton: 0
   stageClearText: {fileID: 0}
+  SelectEnding: 1
+  EndEventPanel: {fileID: 1021252260}
 --- !u!1 &1554534774
 GameObject:
   m_ObjectHideFlags: 0
@@ -10351,6 +10357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageButton: 0
   stageClearText: {fileID: 0}
+  SelectEnding: 1
+  EndEventPanel: {fileID: 1021252260}
 --- !u!1 &1816993139
 GameObject:
   m_ObjectHideFlags: 0
