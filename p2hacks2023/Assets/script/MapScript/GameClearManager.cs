@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameClearManager : MonoBehaviour
 {
+    public bool prologue = false;
     public bool stage1Clear = false;
     public bool stage2Clear = false;
     public bool stage3Clear = false;
