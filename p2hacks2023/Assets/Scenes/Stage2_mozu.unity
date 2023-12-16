@@ -2169,11 +2169,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ef8a9bb42ff195d47a26df3d787df9a4, type: 3}
-    m_FontSize: 27
+    m_Font: {fileID: 12800000, guid: 72f8eda42c42f914b9207563200d1260, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5934,6 +5934,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageButton: 0
   stageClearText: {fileID: 0}
+  SelectEnding: 0
+  EndEventPanel: {fileID: 0}
 --- !u!114 &1191944459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9552,3 +9554,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageButton: 0
   stageClearText: {fileID: 0}
+  SelectEnding: 0
+  EndEventPanel: {fileID: 0}

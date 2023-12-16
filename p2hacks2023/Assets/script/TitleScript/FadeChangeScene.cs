@@ -10,11 +10,14 @@ public class FadeChangeScene : MonoBehaviour
     public string sceneNameString;
     Color color;
 
+    public static bool EndTitleScene = false; 
+
     void Start()
     {
         color = FadeImage.GetComponent<SpriteRenderer>().color;
         color.a = 0f;
         FadeImage.GetComponent<SpriteRenderer>().color = color;
+        EndTitleScene = true;
     }
 /*
     public void OnClick(){
