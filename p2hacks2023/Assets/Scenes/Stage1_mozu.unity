@@ -1552,7 +1552,7 @@ MonoBehaviour:
   TextPanelImage: {fileID: 1368271548}
   gateCDObject: {fileID: 328078656}
   gateCloseCDObject: {fileID: 1554534774}
-  bagButtonObject: {fileID: 0}
+  bagButtonObject: {fileID: 1198363399}
   selectImageObject: {fileID: 500669683}
 --- !u!1 &341128782
 GameObject:
@@ -3900,6 +3900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e35c0973ea74434fa84368a2e1f6728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StageButton: 0
+  stageClearText: {fileID: 0}
 --- !u!1 &851940154
 GameObject:
   m_ObjectHideFlags: 0
@@ -6449,6 +6451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e35c0973ea74434fa84368a2e1f6728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StageButton: 0
+  stageClearText: {fileID: 0}
 --- !u!1 &1504347376
 GameObject:
   m_ObjectHideFlags: 0
