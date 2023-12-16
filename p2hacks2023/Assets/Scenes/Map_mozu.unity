@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageButton: 1
-  stageClearText: {fileID: 949147299}
+  stageClearText: {fileID: 1897825075}
 --- !u!114 &1256355761
 MonoBehaviour:
   m_ObjectHideFlags: 0
