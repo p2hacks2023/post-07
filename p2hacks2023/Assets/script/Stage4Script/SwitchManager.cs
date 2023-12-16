@@ -16,8 +16,8 @@ public class SwitchManager : MonoBehaviour
     public static int switchPushNum = 0;
 
     public static string switchString = "";
-    private string gateOpenString = "p1p2p3";
-    private bool gateOpenFlag = false;
+    public static string gateOpenString = "p1p2p3";
+    public static bool gateOpenFlag = false;
     //private bool switchResetFlag = false;//使わないかも
     
     void Start()
