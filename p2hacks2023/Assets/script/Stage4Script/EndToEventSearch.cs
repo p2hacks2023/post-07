@@ -5,6 +5,7 @@ using UnityEngine;
 public class EndToEventSearch : MonoBehaviour
 {
     bool isFlag = false;
+    public int FamillyOrBattery = 0;
     public GameObject FileLoadText;
     public GameObject TextPanelImage;
     public GameObject TextFileLoad;
@@ -25,7 +26,12 @@ public class EndToEventSearch : MonoBehaviour
                 TextPanelImage.SetActive(true);
                 TextFileLoad.SetActive(true);
 
-                EndEventManager.checkEndCD++;
+
+                if(FamillyOrBattery == 1){
+                    EndEventManager.FamillySearchFlag = true;
+                }else if(FamillyOrBattery == 2){
+                    EndEventManager.BatterySearchFlag = true;
+                }
             }
         }
     }

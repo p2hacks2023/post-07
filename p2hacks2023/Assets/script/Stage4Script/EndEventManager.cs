@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EndEventManager : MonoBehaviour
 {
-    public static int checkEndCD = 0;
+    public static bool FamillySearchFlag = false;
+    public static bool BatterySearchFlag = false;
     public GameObject EndEventPanel;
     public GameObject TextPanelImage;
 
@@ -15,7 +16,7 @@ public class EndEventManager : MonoBehaviour
 
     void Update()
     {
-        if(checkEndCD == 2 && TextPanelImage.activeSelf == false){
+        if(FamillySearchFlag == true && BatterySearchFlag == true && TextPanelImage.activeSelf == false){
             EndEventPanel.SetActive(true);
         }
         
