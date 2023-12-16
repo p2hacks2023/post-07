@@ -16,6 +16,14 @@ public class TimeScript : MonoBehaviour
 	[SerializeField]
 	private float seconds;
 
+	// 残り10秒で表示するパネル
+	[SerializeField]
+	private GameObject TimerLim10;
+
+	// 残り30秒で表示するパネル
+	[SerializeField]
+	private GameObject TimerLim30;
+
 	// 時間切れ時に表示するパネル
 	[SerializeField]
 	private GameObject GameOverPanel;
@@ -32,6 +40,8 @@ public class TimeScript : MonoBehaviour
 		oldSeconds = 0f;
 		timerText = GetComponentInChildren <Text> ();
 		timerText.text = minute.ToString("00") + ":" + ((int) seconds).ToString("00");
+		TimerLim10.SetActive(false);
+		TimerLim30.SetActive(false);
     }
 
     // Update is called once per frame
@@ -61,10 +71,22 @@ public class TimeScript : MonoBehaviour
 			oldSeconds = seconds;
 		}
 
+		//　制限時間が10秒以下になったら表示する
+		if(totalTime <= 11f) {
+			TimerLim10.SetActive(true);
+			TimerLim30.SetActive(false);
+		}
+
+		//　制限時間が30秒以下になったら表示する
+		if(totalTime <= 31f) {
+			TimerLim30.SetActive(true);
+		}
+
 
 		//　制限時間以下になったらゲームオーバーパネルを表示する
 		if(totalTime <= 0f) {
 			GameOverPanel.SetActive(true);
+			TimerLim10.SetActive(false);
         
 		}
     }
