@@ -8,10 +8,12 @@ public class Ending : MonoBehaviour
 {
     public Image fadePanel;             // フェード用のUIパネル（Image）
     public float fadeDuration = 1.0f;   // フェードの完了にかかる時間
+    public GameObject EndTitle;
 
     public void CallCoroutine()
     {
         StartCoroutine(FadeOutAndLoadScene());
+        EndTitle.SetActive(false);
     }
 
     public IEnumerator FadeOutAndLoadScene()
@@ -31,6 +33,14 @@ public class Ending : MonoBehaviour
         }
 
         fadePanel.color = endColor;  // フェードが完了したら最終色に設定
-        SceneManager.LoadScene("Title_pen"); // シーンをロードしてメニューシーンに遷移
+        EndTitle.SetActive(true);
+
+        Invoke(nameof(SceneChange), 3.5f); // シーンをロードしてメニューシーンに遷移
+        
+    }
+
+    public void SceneChange()
+    {
+        SceneManager.LoadScene("Title_pen");
     }
 }
