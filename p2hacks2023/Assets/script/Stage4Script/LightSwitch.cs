@@ -14,6 +14,9 @@ public class LightSwitch : MonoBehaviour
     public GameObject TextPanelImage;
     public GameObject LightSwitchTextFileLoad;
 
+    public AudioSource audioSource; 
+    public AudioClip audioClip;
+
     void Start()
     {
         
@@ -23,6 +26,7 @@ public class LightSwitch : MonoBehaviour
     {
         if(isFlag == true){
             if(Input.GetKeyDown(KeyCode.F)){
+                audioSource.PlayOneShot(audioClip);
                 GlobalLight.SetActive(false);
                 SwitchGlobalLight.SetActive(true);
                 CharaLight.SetActive(false);
