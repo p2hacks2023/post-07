@@ -6,10 +6,13 @@ public class WeightManager : MonoBehaviour
 {
     private int leftValue = 0;
     private int rightValue = 0;
+    private bool audioFlag = false;
 
     public GameObject leftHeavy;
     public GameObject rightHeavy;
     public GameObject gateCD;
+    public AudioSource audioSource; 
+    public AudioClip audioClip;
 
     void Start()
     {
@@ -34,7 +37,12 @@ public class WeightManager : MonoBehaviour
 
         if(leftHeavy.activeSelf == true && rightHeavy.activeSelf == true){
             gateCD.SetActive(false);
+            if(audioFlag == false){
+                audioSource.PlayOneShot(audioClip);
+                audioFlag = true;
+            }
         }else{
+            audioFlag = false;
             gateCD.SetActive(true);
         }
     }

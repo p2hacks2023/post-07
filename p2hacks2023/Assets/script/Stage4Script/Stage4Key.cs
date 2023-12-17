@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stage4Key : MonoBehaviour
 {    
@@ -19,6 +20,9 @@ public class Stage4Key : MonoBehaviour
     public GameObject GateOpenText;
     public GameObject TextPanelImage;
 
+    public AudioSource audioSource; 
+    public AudioClip audioClip;
+
     private int selectedItemCheck = 0;
 
     void Start()
@@ -30,10 +34,14 @@ public class Stage4Key : MonoBehaviour
     {
         selectedItemCheck = Stage4SelectItemManager.instance.selectedItem;
 
+
         if(isFlag == true)
         {
+            
             if(selectedItemCheck == 10 && Input.GetKeyDown(KeyCode.F))
             {
+                audioSource.PlayOneShot(audioClip);
+
                 GateOpenText.SetActive(true);
                 TextPanelImage.SetActive(true);
 

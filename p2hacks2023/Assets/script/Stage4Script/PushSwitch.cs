@@ -9,6 +9,8 @@ public class PushSwitch : MonoBehaviour
 
     public GameObject PushSwitchText;
     public GameObject TextPanelImage;
+    public AudioSource audioSource; 
+    public AudioClip audioClip;
     
     void Start()
     {
@@ -20,6 +22,7 @@ public class PushSwitch : MonoBehaviour
         //Debug.Log("isFlag:" + isFlag);
         if(isFlag == true){
             if(Input.GetKeyDown(KeyCode.F)){
+                audioSource.PlayOneShot(audioClip);
                 PushSwitchText.SetActive(true);
                 TextPanelImage.SetActive(true);
                 
